@@ -1,3 +1,6 @@
+#Sergio Ospina Zuluaga 
+#Esteban Escalante Cordoba
+#Juan Andres Obando Davila 
 import sys
 import ply.lex as lex
 

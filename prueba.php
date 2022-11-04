@@ -13,8 +13,23 @@ if (($a ==1) || (3!=5)){
 		$a = 6;
 	}
 
-echo "esteban"
+echo "esteban";
+//fff
+#assad
+/* sad 
 
+ghgestdrryh perra*/
+class Verdura {
+
+}
+
+class Espinaca extends Verdura {
+
+
+
+} 
+
+  
 function foo($arg1,$a,$arg2){
 	if (($arg1 == 1) || ($a!=$arg2)){
 		$a = 5;

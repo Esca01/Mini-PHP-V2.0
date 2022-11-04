@@ -1,3 +1,6 @@
+#Sergio Ospina Zuluaga 
+#Esteban Escalante Cordoba
+#Juan Andres Obando Davila
 import sys
 import ply.yacc as yacc
 import mini_php
@@ -42,8 +45,9 @@ def p_declaration(p):
 				   | class_declaration
 				   | echo_stmt
 				   | selection_stmt
-			       | iteration_stmt
+			     | iteration_stmt
 				   | typeclass
+           | comments
 	'''
 	pass
 
@@ -66,6 +70,9 @@ def p_header_declaration(p):
 def p_class_declaration(p):
 	'''class_declaration : area CLASS ID LBLOCK attribute RBLOCK
 						 | CLASS ID LBLOCK attribute RBLOCK
+             | CLASS ID LBLOCK RBLOCK
+             | CLASS ID EXTENDS ID LBLOCK attribute RBLOCK
+             | CLASS ID EXTENDS ID LBLOCK RBLOCK
 	'''
 	pass
 
@@ -74,6 +81,11 @@ def p_attribute1(p):
 				 | area var_declaration
 				 | attribute area fun_declaration
 				 | area fun_declaration
+	'''
+	pass
+
+def p_comments(p):
+	'''comments : COMMENTS
 	'''
 	pass
 
@@ -207,13 +219,6 @@ def p_expression(p):
 				  | expression OR expression
 	'''
 	pass
-
-def comment(p):
-  '''comment : COMMENTS
-			| empty
-  '''
-  pass
-  
 
 def p_var(p):
 	'''var : VARIABLE
